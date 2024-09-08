@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title><%= title %></title>
+  </head>
+  <body>
+    <div id="main-container">
+      <h1>Home page</h1>
+      <h2>Total messages = <%= messages.length %></h2>
+      <% messages.forEach((message, index) => { %>
+      <div id="message-container">
+        <h2 id="message-text"><%= message.text %></h2>
+        <!-- <h1>1</h1> -->
+        <h6 id="message-info">
+          Message By <%= message.user %> at <%= message.added %>
+        </h6>
+        <a href="/message/<%= index %>" id="open-button">Open</a>
+      </div>
+      <% }) ; %>
+      <br />
+      <a href="/new" id="new-message">New Message</a>
+    </div>
+  </body>
+</html>
